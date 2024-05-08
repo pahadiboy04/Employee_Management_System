@@ -1,0 +1,39 @@
+{% load static %}
+            
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      body {
+         background-image: url('/static/5.jpg');
+         background-repeat: no-repeat;
+         background-size: 100% 100%; 
+         background-attachment: fixed;
+        }
+     </style>
+  </head>
+  <div class="container">
+    <div class ="background-image"></div>
+    <!-- Content here -->
+    <br><br><br>
+    <p style="font-size: 5em; font-family: 'Brush Script MT', cursive; color: whitesmoke;">Employee Remove With<br> One click</p>  <!-- Example single danger button -->
+<div class="btn-group">
+    <button type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Choose Employee To Remove
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownmenubutton1">
+      <li><a class="dropdown-item" href="#">Employee_ID&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Name_of_employee</a></li>
+        {% for emp in emps %}
+      <li><a class="dropdown-item" href="/delete/{{emp.emp_id}}">{{emp.emp_id}}&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;{{emp.name}}</a></li>
+        {% endfor %}
+    </ul>
+  </div>
+  </div>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
